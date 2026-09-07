@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #0d74bb;
+  --color-brand-secondary: #8dc740;
+  --color-brand-accent: #2b93d1;
+  --color-brand-gold: #c9a227;
+  --color-brand-ink: #1c2421;
+  --color-brand-muted: #5c6561;
+  --color-brand-cream: #f9f6f0;
+  --color-brand-paper: #fffdf8;
+  --color-brand-dark: #121816;
+  --color-brand-border: #e6dfd2;
+  --color-brand-light: #f9f6f0;
+
+  --font-display: "Outfit", "Inter", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  --font-ui: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #f9f6f0;
+  color: #1c2421;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f9f6f0; }
+::-webkit-scrollbar-thumb { background: #0d74bb; border-radius: 3px; }
+
+:focus-visible {
+  outline: 2px solid #0d74bb;
+  outline-offset: 3px;
+}
+
+::selection {
+  background-color: #0d74bb33;
+  color: #121816;
+}
