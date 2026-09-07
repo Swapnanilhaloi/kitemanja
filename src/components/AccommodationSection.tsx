@@ -14,7 +14,7 @@ export function AccommodationSection() {
       <Container>
         <SectionHeading
           eyebrow="Our tents & rooms"
-          title="Choose your own tent"
+          title="Choose Your Stay"
           subtitle="Pre-pitched Dome and Alpine tents with breakfast and dinner, plus family-run guesthouses and hotels for selected dates."
         />
 
@@ -36,7 +36,7 @@ export function AccommodationSection() {
                   loading="lazy"
                 />
                 {acc.badge && (
-                  <span className="absolute top-4 left-4 rounded-full bg-brand-secondary px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">
+                  <span className="absolute top-4 left-4 rounded-full bg-brand-primary px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">
                     {acc.badge}
                   </span>
                 )}
@@ -53,16 +53,18 @@ export function AccommodationSection() {
                 )}
                 {acc.availability && (
                   <p className="mt-3 flex items-center gap-2 text-xs text-brand-muted">
-                    <Calendar size={13} className="text-brand-secondary" />
+                    <Calendar size={13} className="text-brand-primary" />
                     {acc.availability}
                   </p>
                 )}
-                <button
-                  onClick={goContact}
-                  className="mt-auto pt-5 inline-flex items-center justify-center rounded-full bg-brand-secondary px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#7ab536] cursor-pointer self-start"
-                >
-                  {acc.cta}
-                </button>
+                <div className="mt-auto pt-5">
+                  <button
+                    onClick={goContact}
+                    className="rounded-full bg-brand-primary px-6 py-2.5 text-sm font-semibold text-white hover:bg-brand-accent cursor-pointer transition-colors"
+                  >
+                    {acc.cta}
+                  </button>
+                </div>
               </div>
             </motion.article>
           ))}

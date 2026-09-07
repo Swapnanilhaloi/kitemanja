@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 260" fill="none">
+
+  <!-- ── Blue circle ── -->
+  <circle cx="120" cy="118" r="112" fill="#0d74bb"/>
+
+  <!-- ── Kite diamond
+       top=120,14   right=176,72   bottom=120,118   left=64,72
+  ── -->
+  <polygon points="120,14 176,72 120,118 64,72" fill="white"/>
+
+  <!-- Kite frame lines (blue, same colour as circle so they cut through) -->
+  <line x1="120" y1="14"  x2="120" y2="118" stroke="#0d74bb" stroke-width="4" stroke-linecap="round"/>
+  <line x1="64"  y1="72"  x2="176" y2="72"  stroke="#0d74bb" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- ── Green bow-tie connector at kite bottom ── -->
+  <polygon points="107,114 133,114 120,128" fill="#8dc740"/>
+
+  <!-- ── Green S-curve tail ── -->
+  <path d="M120,128 C106,143 138,155 122,172 C106,189 132,200 115,218"
+        stroke="#8dc740" stroke-width="8.5" fill="none"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ── KITE text ── -->
+  <text x="120" y="155"
+        font-family="'Arial Black','Arial',sans-serif"
+        font-weight="900" font-size="26"
+        fill="white" text-anchor="middle" letter-spacing="2">KITE</text>
+
+  <!-- ── MANJA text ── -->
+  <text x="120" y="183"
+        font-family="'Arial Black','Arial',sans-serif"
+        font-weight="900" font-size="26"
+        fill="white" text-anchor="middle" letter-spacing="2">MANJA</text>
+
+  <!-- ── "OFF THE BEATEN TRACK" curved along bottom of circle ──
+       Arc: centre 120,118  radius 104
+       Start angle ~210°, end ~330°  (sweeping left-to-right under the circle centre)
+  ── -->
+  <path id="curve"
+        d="M 22,172 A 104,104 0 0,0 218,172"
+        fill="none"/>
+  <text font-family="'Arial','Helvetica',sans-serif"
+        font-weight="700" font-size="13.5"
+        fill="white" letter-spacing="1.8">
+    <textPath href="#curve" startOffset="50%" text-anchor="middle">
+      OFF THE BEATEN TRACK
+    </textPath>
+  </text>
+
+</svg>

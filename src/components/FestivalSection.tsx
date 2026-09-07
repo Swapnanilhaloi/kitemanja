@@ -17,7 +17,7 @@ export function FestivalSection() {
             <div className="absolute inset-0 bg-black/30" />
           </div>
           <div className="p-8 sm:p-12 flex flex-col justify-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-secondary">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-accent">
               The festival of festivals
             </p>
             <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
@@ -25,10 +25,10 @@ export function FestivalSection() {
             </h2>
             <div className="mt-4 flex flex-wrap gap-4 text-sm text-white/75">
               <span className="inline-flex items-center gap-1.5">
-                <Calendar size={14} className="text-brand-secondary" /> {FESTIVAL_DATES}
+                <Calendar size={14} className="text-brand-accent" /> {FESTIVAL_DATES}
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <MapPin size={14} className="text-brand-secondary" /> Kisama Heritage Village, Kohima
+                <MapPin size={14} className="text-brand-accent" /> Kisama Heritage Village, Kohima
               </span>
             </div>
             <p className="mt-5 text-white/75 leading-relaxed">
@@ -37,12 +37,14 @@ export function FestivalSection() {
             <p className="mt-3 text-white/75 leading-relaxed">
               The camp is operational from {CAMP_OPENS} onwards so you can arrive a day early for the inaugural ceremony. Stay on site, or choose a family-run guesthouse or hotel.
             </p>
-            <button
-              onClick={() => document.getElementById('packages')?.scrollIntoView({ behavior: 'smooth' })}
-              className="mt-8 self-start rounded-full bg-brand-secondary px-6 py-3 text-sm font-semibold text-white hover:bg-[#7ab536] cursor-pointer"
-            >
-              See package tours
-            </button>
+            <div className="mt-8">
+              <button
+                onClick={() => document.getElementById('packages')?.scrollIntoView({ behavior: 'smooth' })}
+                className="rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-white hover:bg-brand-accent cursor-pointer transition-colors"
+              >
+                See package tours
+              </button>
+            </div>
           </div>
         </div>
       </Container>

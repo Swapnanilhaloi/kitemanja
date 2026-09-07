@@ -25,8 +25,8 @@ export function PackagesSection() {
               className={cn(
                 'rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-200 border cursor-pointer',
                 activeTab === i
-                  ? 'bg-brand-secondary text-white border-brand-secondary'
-                  : 'border-brand-border text-brand-muted hover:border-brand-secondary hover:text-brand-ink bg-white'
+                  ? 'bg-brand-primary text-white border-brand-primary shadow-sm'
+                  : 'border-brand-border text-brand-muted hover:border-brand-primary hover:text-brand-primary bg-white'
               )}
             >
               {pkg.duration} · {pkg.name.replace(' Tour', '')}
@@ -52,7 +52,7 @@ export function PackagesSection() {
                 <ol className="mt-8 space-y-5">
                   {pkg.itinerary.map(item => (
                     <li key={item.day} className="flex gap-4">
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-secondary text-sm font-bold text-white">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-primary text-sm font-bold text-white">
                         {item.day}
                       </span>
                       <div>
@@ -71,12 +71,14 @@ export function PackagesSection() {
                 <p className="mt-8 text-xs text-brand-muted">
                   Package rates vary by group size, vehicle, and stay type. See the skeleton itinerary tables below.
                 </p>
-                <button
-                  onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="mt-4 rounded-full bg-brand-secondary px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#7ab536] cursor-pointer"
-                >
-                  View skeleton itinerary rates
-                </button>
+                <div className="mt-4">
+                  <button
+                    onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="rounded-full bg-brand-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-accent transition-colors cursor-pointer"
+                  >
+                    View skeleton itinerary rates
+                  </button>
+                </div>
               </motion.div>
             ) : null
           )}

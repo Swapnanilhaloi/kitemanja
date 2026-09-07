@@ -21,13 +21,13 @@ export function Footer() {
               className="inline-flex items-center gap-3"
               aria-label="Kitemanja home"
             >
-              <Logo />
+              <Logo size={52} />
               <span className="leading-tight">
                 <span className="block font-display text-sm font-bold tracking-[0.14em]">
                   <span className="text-[#6bb8e8]">KITE</span>
                   <span className="text-brand-secondary">MANJA</span>
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.18em] text-white/50">Hornbill Festival</span>
+                <span className="text-[10px] uppercase tracking-[0.18em] text-white/50">Off the Beaten Track</span>
               </span>
             </a>
             <p className="mt-5 text-sm text-white/60 leading-relaxed">

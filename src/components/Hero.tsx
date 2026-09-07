@@ -85,7 +85,7 @@ export function Hero() {
         >
           <button
             onClick={() => go('hornbill')}
-            className="inline-flex items-center justify-center rounded-full bg-brand-secondary px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/20 transition-colors hover:bg-[#7ab536] cursor-pointer"
+            className="inline-flex items-center justify-center rounded-full bg-brand-primary px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/20 transition-colors hover:bg-brand-accent cursor-pointer"
           >
             Let’s Explore
           </button>

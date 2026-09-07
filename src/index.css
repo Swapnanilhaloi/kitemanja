@@ -1,22 +1,38 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-primary: #0d74bb;
-  --color-brand-secondary: #8dc740;
-  --color-brand-accent: #2b93d1;
-  --color-brand-gold: #c9a227;
-  --color-brand-ink: #1c2421;
-  --color-brand-muted: #5c6561;
-  --color-brand-cream: #f9f6f0;
-  --color-brand-paper: #fffdf8;
-  --color-brand-dark: #121816;
-  --color-brand-border: #e6dfd2;
-  --color-brand-light: #f9f6f0;
+  /*
+   * Brand Color Tokens
+   * Derived from Kite Manja logo:
+   *   Sky Blue   #0d74bb
+   *   Lime Green #8dc740
+   */
 
-  --font-display: "Outfit", "Inter", system-ui, sans-serif;
-  --font-serif: "Playfair Display", "Georgia", serif;
-  --font-body: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
-  --font-ui: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  /* Primary = logo sky blue */
+  --color-brand-primary:   #0d74bb;
+  /* Secondary = logo lime green */
+  --color-brand-secondary: #8dc740;
+  /* Accent = lighter sky blue for highlights */
+  --color-brand-accent:    #3a9fd6;
+  /* Deep dark navy for backgrounds */
+  --color-brand-dark:      #062240;
+  /* Ink = near-black for body text */
+  --color-brand-ink:       #0d2233;
+  /* Cream = warm off-white section backgrounds */
+  --color-brand-cream:     #f2f7fb;
+  /* Paper = pure white */
+  --color-brand-paper:     #ffffff;
+  /* Off-white light background */
+  --color-brand-light:     #f4f8fb;
+  /* Muted blue-grey for secondary text */
+  --color-brand-muted:     #5a7a96;
+  /* Subtle border */
+  --color-brand-border:    #c8dce9;
+
+  /* Typography */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body:    "DM Sans", "Inter", system-ui, sans-serif;
+  --font-ui:      "Inter", system-ui, sans-serif;
 }
 
 * {
@@ -31,22 +47,24 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: #f9f6f0;
-  color: #1c2421;
+  background-color: #f2f7fb;
+  color: #0d2233;
   margin: 0;
   padding: 0;
 }
 
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f9f6f0; }
-::-webkit-scrollbar-thumb { background: #0d74bb; border-radius: 3px; }
 
+
+/* Hide scrollbar — keep scroll functional */
+* { scrollbar-width: none; }
+*::-webkit-scrollbar { display: none; }
 :focus-visible {
   outline: 2px solid #0d74bb;
   outline-offset: 3px;
 }
 
+/* Selection */
 ::selection {
-  background-color: #0d74bb33;
-  color: #121816;
+  background-color: #0d74bb28;
+  color: #062240;
 }

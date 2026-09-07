@@ -66,7 +66,7 @@ export function LocationSection() {
               href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-white hover:bg-[#0b67a8]"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-white hover:bg-brand-dark transition-colors"
             >
               <Navigation size={14} />
               Get directions

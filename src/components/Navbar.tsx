@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { useScrolled } from '@/hooks/useScroll'
 import { navItems } from '@/data/navigation'
+import { Logo } from '@/components/Logo'
 import { cn } from '@/lib/utils'
 
 export function Navbar() {
@@ -58,21 +59,10 @@ export function Navbar() {
           <a
             href="#home"
             onClick={e => { e.preventDefault(); handleNav('#home') }}
-            className="flex flex-col leading-none focus-visible:outline-none"
+            className="flex items-center focus-visible:outline-none"
             aria-label="Kitemanja home"
           >
-            <span className="font-display text-[15px] font-extrabold tracking-[0.12em] sm:text-base">
-              <span className="text-[#5aa8dc]">KITE</span>
-              <span className="text-brand-secondary">MANJA</span>
-            </span>
-            <span
-              className={cn(
-                'mt-1 text-[8px] font-semibold uppercase tracking-[0.22em]',
-                overlay ? 'text-white/90' : 'text-brand-ink/70'
-              )}
-            >
-              Hornbill Festival
-            </span>
+            <Logo size={54} />
           </a>
 
           <nav className="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">
@@ -97,7 +87,7 @@ export function Navbar() {
           <div className="hidden lg:flex items-center">
             <button
               onClick={() => handleNav('#contact')}
-              className="inline-flex items-center rounded-full bg-brand-secondary px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#7ab536] transition-colors cursor-pointer"
+              className="inline-flex items-center rounded-full bg-brand-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-accent transition-colors cursor-pointer"
             >
               Book Now
             </button>
@@ -106,7 +96,7 @@ export function Navbar() {
           <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={() => handleNav('#contact')}
-              className="rounded-full bg-brand-secondary px-4 py-2 text-xs font-semibold text-white"
+              className="rounded-full bg-brand-primary px-4 py-2 text-xs font-semibold text-white hover:bg-brand-accent transition-colors"
             >
               Book Now
             </button>
@@ -148,7 +138,7 @@ export function Navbar() {
               ))}
               <button
                 onClick={() => handleNav('#contact')}
-                className="mt-3 inline-flex items-center justify-center rounded-full bg-brand-secondary px-5 py-3 text-sm font-semibold text-white"
+                className="mt-3 inline-flex items-center justify-center rounded-full bg-brand-primary px-5 py-3 text-sm font-semibold text-white hover:bg-brand-accent transition-colors"
               >
                 Book Now
               </button>

@@ -134,8 +134,8 @@ export function PricingSection() {
         />
 
         <div className="mt-2 space-y-3">
-          {pricingSections.map((section, i) => (
-            <PricingSectionAccordion key={section.id} section={section} defaultOpen={i === 0} />
+          {pricingSections.map((section) => (
+            <PricingSectionAccordion key={section.id} section={section} defaultOpen={false} />
           ))}
         </div>
       </Container>

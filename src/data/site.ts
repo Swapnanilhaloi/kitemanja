@@ -1,4 +1,4 @@
-export const LOGO_URL = 'https://www.kitemanja.com/assets/images/logo/kitemanja.png'
+export const LOGO_URL = '/logo.svg'
 export const BANNER_URL = 'https://www.kitemanja.com/assets/images/banner/banner.jpg'
 export const HERO_URL = BANNER_URL
 export const ABOUT_IMAGE_URL = 'https://www.kitemanja.com/assets/images/banner/about.jpg'

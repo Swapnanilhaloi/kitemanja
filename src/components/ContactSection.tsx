@@ -96,7 +96,7 @@ export function ContactSection() {
               <textarea name="notes" rows={4} placeholder="Vehicle preference, pickup at Dimapur, extra adults or children…" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary resize-y" />
             </label>
 
-            <button type="submit" className="w-full rounded-full bg-brand-secondary py-3.5 text-sm font-semibold text-white hover:bg-[#7ab536] cursor-pointer">
+            <button type="submit" className="w-full rounded-full bg-brand-primary py-3.5 text-sm font-semibold text-white hover:bg-brand-accent transition-colors cursor-pointer">
               Contact us to book
             </button>
             <p className="text-xs text-brand-muted">
