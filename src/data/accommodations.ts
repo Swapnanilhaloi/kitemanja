@@ -36,7 +36,7 @@ export const accommodations: Accommodation[] = [
     ],
     image: 'https://www.kitemanja.com/assets/images/background/r2.jpg',
     imageAlt: 'Dome tent accommodation',
-    cta: 'Ask about this trip',
+    cta: 'Book your Dome Tent',
     ctaHref: '#contact',
     badge: 'Most Popular',
     price: 'Rs. 2,356',
@@ -63,7 +63,7 @@ export const accommodations: Accommodation[] = [
     ],
     image: 'https://www.kitemanja.com/assets/images/background/r1.jpg',
     imageAlt: 'Alpine tent accommodation',
-    cta: 'Ask about this trip',
+    cta: 'Book your Alpine Tent',
     ctaHref: '#contact',
     price: 'Rs. 5,998',
     priceNote: 'for 2 people · Rs. 8,996 for 3, meals included',
@@ -85,9 +85,9 @@ export const accommodations: Accommodation[] = [
     image:
       'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=80',
     imageAlt: 'Cosy guesthouse room',
-    cta: 'Ask about this trip',
+    cta: 'Enquire for guesthouse',
     ctaHref: '#contact',
-    availability: 'Open for December 1st, 2nd & 3rd',
+    availability: 'Open for December 1st, 2nd and 3rd',
   },
   {
     id: 'hotel',
@@ -105,8 +105,8 @@ export const accommodations: Accommodation[] = [
     image:
       'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&q=80',
     imageAlt: 'Hotel room with modern amenities',
-    cta: 'Ask about this trip',
+    cta: 'Enquire for hotel',
     ctaHref: '#contact',
-    availability: 'Open for December 1st, 2nd, 3rd, 8th, 9th & 10th',
+    availability: 'Open for December 1st, 2nd, 3rd, 8th, 9th and 10th',
   },
 ]

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { galleryImages, galleryCategories, type GalleryImage } from '@/data/gallery'
+import { galleryImages, galleryCategories, usingLocalGallery, type GalleryImage } from '@/data/gallery'
 import { cn } from '@/lib/utils'
 
 function Lightbox({
@@ -83,8 +83,9 @@ export function Gallery() {
     <section id="gallery" className="py-20 lg:py-28 bg-white">
       <Container>
         <SectionHeading
-          eyebrow="Postcards from the road"
-          title="The moments we pack light for."
+          eyebrow="Camp Kite Manja"
+          title="From the campsite"
+          subtitle={usingLocalGallery ? undefined : 'Add your photos to src/assets/gallery — they replace these placeholders as soon as you drop them in.'}
           align="center"
         />
 

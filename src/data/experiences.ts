@@ -10,47 +10,43 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    id: 'hornbill-camp',
-    category: 'Festivals',
-    location: 'Kohima, Nagaland',
-    title: 'Hornbill Festival Camp',
-    description:
-      'Wake up inside the festival story with pre-pitched tents, local food, and an Angami welcome.',
-    image:
-      'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1200&q=86',
-    imageAlt: 'Hornbill Festival Camp',
-  },
-  {
-    id: 'khonoma-trails',
-    category: 'Trails',
-    location: 'Nagaland highlands',
-    title: 'Dzukou & Khonoma Trails',
-    description:
-      'Misty ridges, lily valleys, and village guardians who know every bend in the trail.',
-    image:
-      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=86',
-    imageAlt: 'Dzukou & Khonoma Trails',
-  },
-  {
-    id: 'kaziranga',
-    category: 'Wildlife',
-    location: 'Assam',
-    title: 'Kaziranga & River Trails',
-    description:
-      'Rhino safaris, tea garden mornings, and Brahmaputra sunsets around the campfire.',
-    image:
-      'https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=86',
-    imageAlt: 'Kaziranga & River Trails',
-  },
-  {
-    id: 'naga-food',
+    id: 'heritage',
     category: 'Culture',
     location: 'Kisama Heritage Village',
-    title: 'Angami Naga Kitchen',
+    title: 'Cultural heritage',
     description:
-      'Slow-cooked meats, foraged vegetables, and smokehouse traditions from our in-house kitchen.',
-    image:
-      'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=1000&q=80',
-    imageAlt: 'Traditional Naga food spread',
+      'Live the Hornbill Festival from inside the venue — tribal morungs, dances, crafts, and the inaugural ceremony a day before the crowds arrive.',
+    image: 'https://www.kitemanja.com/assets/images/banner/about.jpg',
+    imageAlt: 'Hornbill Festival at Kisama Heritage Village',
+  },
+  {
+    id: 'village-tours',
+    category: 'Village tours',
+    location: 'Kohima · Khonoma',
+    title: 'Village tours',
+    description:
+      'Walk Kohima town and Khonoma — India’s first green village — with transfers built into the 3-night and 5-night packages.',
+    image: 'https://www.kitemanja.com/assets/images/banner/banner.jpg',
+    imageAlt: 'Naga hills and village landscape',
+  },
+  {
+    id: 'cuisine',
+    category: 'Food',
+    location: 'Camp kitchen',
+    title: 'Local cuisines',
+    description:
+      'Breakfast and dinner from our in-house Angami Naga kitchen, plus festival food courts with dishes from across Nagaland’s tribes.',
+    image: 'https://www.kitemanja.com/assets/images/background/r2.jpg',
+    imageAlt: 'Camp kitchen and dining at Kite Manja',
+  },
+  {
+    id: 'adventures',
+    category: 'Adventures',
+    location: 'Nagaland · Assam',
+    title: 'Adventures & festive fervour',
+    description:
+      'Festival nights at Kisama, then the longer trail to Kaziranga and Guwahati on the 5 nights / 6 days tour.',
+    image: 'https://www.kitemanja.com/assets/images/background/r1.jpg',
+    imageAlt: 'Festival camp and adventure stays',
   },
 ]

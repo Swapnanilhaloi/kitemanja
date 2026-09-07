@@ -25,7 +25,7 @@ export function FacilitiesSection() {
         <SectionHeading
           eyebrow="Our facilities"
           title="Why choose us"
-          subtitle="Comfort in the middle of the festival — without making camp feel like a hotel."
+          subtitle="Pre-pitched tents, bedding, water, lobby charging, Angami Naga kitchen, eco-friendly bathrooms, and hot water on request."
           align="center"
         />
 

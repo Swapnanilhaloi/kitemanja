@@ -11,12 +11,10 @@ export function PackagesSection() {
   return (
     <section id="packages" className="py-20 lg:py-28 bg-white">
       <Container>
-        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-primary mb-3">
-          Package tours
-        </p>
         <SectionHeading
-          title="A route with room for the real moments."
-          subtitle="The original Kitemanja packages pair transfers, stays, festival time, village visits, and the long way home."
+          eyebrow="Package tours"
+          title="Skeleton itineraries"
+          subtitle="Two routes from the KiteManja site: 3 nights / 4 days in Nagaland, or 5 nights / 6 days continuing to Kaziranga and Guwahati. Contact us for more details."
         />
 
         <div className="flex gap-2 mt-2 flex-wrap">
@@ -25,13 +23,13 @@ export function PackagesSection() {
               key={pkg.id}
               onClick={() => setActiveTab(i)}
               className={cn(
-                'rounded-full px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.12em] transition-all duration-200 border cursor-pointer',
+                'rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-200 border cursor-pointer',
                 activeTab === i
-                  ? 'bg-brand-primary text-white border-brand-primary'
-                  : 'border-brand-border text-brand-muted hover:border-brand-primary hover:text-brand-primary bg-white'
+                  ? 'bg-brand-secondary text-white border-brand-secondary'
+                  : 'border-brand-border text-brand-muted hover:border-brand-secondary hover:text-brand-ink bg-white'
               )}
             >
-              {pkg.name}
+              {pkg.duration} · {pkg.name.replace(' Tour', '')}
             </button>
           ))}
         </div>
@@ -47,32 +45,37 @@ export function PackagesSection() {
                 transition={{ duration: 0.3 }}
                 className="mt-10 rounded-[24px] border border-brand-border bg-brand-cream p-6 sm:p-8"
               >
-                <p className="text-sm text-brand-muted">{pkg.route}</p>
+                <p className="text-sm text-brand-primary font-medium">{pkg.route}</p>
                 <h3 className="mt-2 font-display text-2xl font-bold text-brand-ink">{pkg.name}</h3>
                 <p className="mt-3 text-sm text-brand-muted leading-relaxed max-w-2xl">{pkg.description}</p>
 
-                <ol className="mt-8 space-y-4">
+                <ol className="mt-8 space-y-5">
                   {pkg.itinerary.map(item => (
                     <li key={item.day} className="flex gap-4">
-                      <span className="font-display text-sm font-bold text-brand-primary w-6 shrink-0">
-                        {item.day}.
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-secondary text-sm font-bold text-white">
+                        {item.day}
                       </span>
                       <div>
                         <p className="text-sm font-semibold text-brand-ink">{item.title}</p>
                         <p className="text-xs text-brand-muted mt-0.5">{item.location}</p>
+                        <ul className="mt-2 space-y-1">
+                          {item.activities.map(act => (
+                            <li key={act} className="text-sm text-brand-muted">{act}</li>
+                          ))}
+                        </ul>
                       </div>
                     </li>
                   ))}
                 </ol>
 
                 <p className="mt-8 text-xs text-brand-muted">
-                  Rates are indicative starting points from the published Kitemanja itinerary. Final cost varies by pax, vehicle, dates, and availability.
+                  Package rates vary by group size, vehicle, and stay type. See the skeleton itinerary tables below.
                 </p>
                 <button
                   onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="mt-4 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-primary cursor-pointer"
+                  className="mt-4 rounded-full bg-brand-secondary px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#7ab536] cursor-pointer"
                 >
-                  Ask for exact dates
+                  View skeleton itinerary rates
                 </button>
               </motion.div>
             ) : null

@@ -12,14 +12,14 @@ export function ContactSection() {
     const data = new FormData(form)
     const name = String(data.get('name') || '')
     const email = String(data.get('email') || '')
-    const experience = String(data.get('experience') || '')
+    const stay = String(data.get('stay') || '')
     const group = String(data.get('group') || '')
     const when = String(data.get('when') || '')
     const notes = String(data.get('notes') || '')
     const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nExperience: ${experience}\nGroup: ${group}\nWhen: ${when}\nNotes: ${notes}`
+      `Name: ${name}\nEmail: ${email}\nStay: ${stay}\nGroup: ${group}\nWhen: ${when}\nNotes: ${notes}`
     )
-    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent('Trip request from ' + name)}&body=${body}`
+    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent('Booking enquiry from ' + name)}&body=${body}`
     setSent(true)
   }
 
@@ -28,19 +28,19 @@ export function ContactSection() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-primary">Let’s make a plan</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-primary">Contact us</p>
             <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
-              Your next good story starts here.
+              Book your desired package
             </h2>
             <p className="mt-4 text-brand-muted leading-relaxed">
-              Tell us what you’re drawn to — a festival, a trail, a table full of local food. We’ll shape the rest around you.
+              Tell us your dates, group size, and whether you want a Dome tent, Alpine tent, guesthouse or hotel. We will reply with availability for Hornbill at Kisama.
             </p>
             <div className="mt-8 space-y-3 text-sm">
               <a href={`mailto:${EMAIL}`} className="block text-brand-ink hover:text-brand-primary">
-                ✉ Say hello · {EMAIL}
+                {EMAIL}
               </a>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="block text-brand-ink hover:text-brand-primary">
-                ↗ WhatsApp us · {WHATSAPP}
+                WhatsApp · {WHATSAPP}
               </a>
             </div>
           </div>
@@ -52,51 +52,55 @@ export function ContactSection() {
             viewport={{ once: true }}
             className="lg:col-span-7 rounded-[28px] bg-brand-cream border border-brand-border p-6 sm:p-8 space-y-4"
           >
-            <h3 className="font-display text-2xl font-bold text-brand-ink">Plan your escape</h3>
-            <p className="text-sm text-brand-muted">A few details and we’ll take it from here.</p>
+            <h3 className="font-display text-2xl font-bold text-brand-ink">Send an enquiry</h3>
+            <p className="text-sm text-brand-muted">No payment is taken on this form.</p>
 
             <label className="block">
               <span className="text-xs font-medium text-brand-ink">Your name</span>
-              <input required name="name" placeholder="e.g. Vikramaditya Roy" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary" />
+              <input required name="name" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary" />
             </label>
             <label className="block">
               <span className="text-xs font-medium text-brand-ink">Email address</span>
-              <input required type="email" name="email" placeholder="you@example.com" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary" />
+              <input required type="email" name="email" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary" />
             </label>
             <label className="block">
-              <span className="text-xs font-medium text-brand-ink">What calls you?</span>
-              <select required name="experience" defaultValue="" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary">
-                <option value="" disabled>Select an experience</option>
-                <option>Hornbill Festival Camp</option>
-                <option>Dzukou & Khonoma Trails</option>
-                <option>Kaziranga & River Trails</option>
-                <option>Something custom</option>
+              <span className="text-xs font-medium text-brand-ink">Stay type</span>
+              <select required name="stay" defaultValue="" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary">
+                <option value="" disabled>Select</option>
+                <option>Dome Tent</option>
+                <option>Alpine Tent</option>
+                <option>Family Run Guest House</option>
+                <option>Hotel</option>
+                <option>3 Nights / 4 Days package</option>
+                <option>5 Nights / 6 Days package</option>
               </select>
             </label>
             <label className="block">
-              <span className="text-xs font-medium text-brand-ink">Who’s coming?</span>
+              <span className="text-xs font-medium text-brand-ink">Number of guests</span>
               <select required name="group" defaultValue="" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary">
-                <option value="" disabled>Number of travellers</option>
-                <option>Just me</option>
-                <option>2 people</option>
-                <option>3–5 people</option>
-                <option>6+ people</option>
+                <option value="" disabled>Select</option>
+                <option>2 Pax</option>
+                <option>4 Pax</option>
+                <option>6 Pax</option>
+                <option>8 Pax</option>
+                <option>10 Pax</option>
+                <option>Other / mixed group</option>
               </select>
             </label>
             <label className="block">
-              <span className="text-xs font-medium text-brand-ink">When are you thinking?</span>
-              <input name="when" placeholder="e.g. December 2026" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary" />
+              <span className="text-xs font-medium text-brand-ink">Festival dates</span>
+              <input name="when" placeholder="e.g. 1–10 December" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary" />
             </label>
             <label className="block">
-              <span className="text-xs font-medium text-brand-ink">Anything we should know?</span>
-              <textarea name="notes" rows={4} placeholder="Dietary preferences, pickup needs, or the kind of trip you have in mind..." className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary resize-y" />
+              <span className="text-xs font-medium text-brand-ink">Notes</span>
+              <textarea name="notes" rows={4} placeholder="Vehicle preference, pickup at Dimapur, extra adults or children…" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary resize-y" />
             </label>
 
-            <button type="submit" className="w-full rounded-full bg-brand-primary py-3.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-[#0b67a8] cursor-pointer">
-              Send trip request
+            <button type="submit" className="w-full rounded-full bg-brand-secondary py-3.5 text-sm font-semibold text-white hover:bg-[#7ab536] cursor-pointer">
+              Contact us to book
             </button>
             <p className="text-xs text-brand-muted">
-              {sent ? 'Your email client should open with the details. We usually reply within 12 hours.' : 'We usually reply within 12 hours. No payment is taken here.'}
+              {sent ? 'Your email app should open with the enquiry. If it does not, write to us directly.' : 'We will confirm tents, rooms, and transfers for your dates.'}
             </p>
           </motion.form>
         </div>

@@ -39,9 +39,9 @@ export function LocationSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
             <SectionHeading
-              eyebrow="Find your way here"
-              title="Kisama, Kohima, and the road beyond."
-              subtitle="Kitemanja is based at Kisama Heritage Village — just 12 km from Kohima, the capital of Nagaland."
+              eyebrow="The event"
+              title="Kisama Heritage Village, Kohima"
+              subtitle="Our exclusive campsite sits inside the Hornbill Festival venue — about 12 km from Kohima. Packages start from Dimapur."
             />
             <div className="space-y-3">
               {destinations.map(dest => (

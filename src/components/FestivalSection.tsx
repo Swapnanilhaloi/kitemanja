@@ -1,42 +1,48 @@
-import { motion } from 'framer-motion'
 import { Calendar, MapPin } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
+import { BANNER_URL, CAMP_OPENS, FESTIVAL_DATES } from '@/data/site'
 
 export function FestivalSection() {
   return (
-    <section id="hornbill" className="py-16 bg-brand-cream">
+    <section id="hornbill" className="py-16 lg:py-24 bg-white">
       <Container>
         <div className="rounded-[28px] bg-brand-dark text-white overflow-hidden grid lg:grid-cols-2">
-          <div className="relative min-h-[280px]">
+          <div className="relative min-h-[280px] lg:min-h-[420px]">
             <img
-              src="https://www.kitemanja.com/assets/images/banner/banner.jpg"
-              alt="Hornbill Festival cultural celebrations at Kisama Heritage Village"
+              src={BANNER_URL}
+              alt="Hornbill Festival at Kisama Heritage Village"
               className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-black/30" />
           </div>
-          <div className="p-8 sm:p-12">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-accent">
+          <div className="p-8 sm:p-12 flex flex-col justify-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-secondary">
               The festival of festivals
             </p>
             <h2 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
               Hornbill Festival
             </h2>
-            <div className="mt-4 flex flex-wrap gap-4 text-sm text-white/70">
+            <div className="mt-4 flex flex-wrap gap-4 text-sm text-white/75">
               <span className="inline-flex items-center gap-1.5">
-                <Calendar size={14} className="text-brand-accent" /> December 1–10
+                <Calendar size={14} className="text-brand-secondary" /> {FESTIVAL_DATES}
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <MapPin size={14} className="text-brand-accent" /> Kisama Heritage Village, Kohima
+                <MapPin size={14} className="text-brand-secondary" /> Kisama Heritage Village, Kohima
               </span>
             </div>
-            <p className="mt-5 text-white/70 leading-relaxed">
-              Hornbill Festival is celebrating its 25th year. If this biggest festival of the Northeast is on your list — or you’ve been here before — join us for the Silver Jubilee. Camp inside the venue, or stay in boutique hotels and family-run guesthouses.
+            <p className="mt-5 text-white/75 leading-relaxed">
+              Hornbill is the biggest festival of the Northeast. Camp Kite Manja sits inside Kisama Heritage Village — our tenth edition of this exclusive campsite.
             </p>
-            <p className="mt-3 text-white/70 leading-relaxed">
-              We ensure you arrive a day early to attend the inaugural ceremony — a blend of cultural heritage, village tours, local cuisines, adventures, and festive fervour.
+            <p className="mt-3 text-white/75 leading-relaxed">
+              The camp is operational from {CAMP_OPENS} onwards so you can arrive a day early for the inaugural ceremony. Stay on site, or choose a family-run guesthouse or hotel.
             </p>
+            <button
+              onClick={() => document.getElementById('packages')?.scrollIntoView({ behavior: 'smooth' })}
+              className="mt-8 self-start rounded-full bg-brand-secondary px-6 py-3 text-sm font-semibold text-white hover:bg-[#7ab536] cursor-pointer"
+            >
+              See package tours
+            </button>
           </div>
         </div>
       </Container>

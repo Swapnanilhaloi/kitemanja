@@ -73,8 +73,14 @@ function PricingTable({ table }: { table: (typeof pricingSections)[number]['tabl
   )
 }
 
-function PricingSectionAccordion({ section }: { section: (typeof pricingSections)[number] }) {
-  const [open, setOpen] = useState(false)
+function PricingSectionAccordion({
+  section,
+  defaultOpen = false,
+}: {
+  section: (typeof pricingSections)[number]
+  defaultOpen?: boolean
+}) {
+  const [open, setOpen] = useState(defaultOpen)
 
   return (
     <div className="border border-brand-border rounded-2xl overflow-hidden bg-white">
@@ -122,14 +128,14 @@ export function PricingSection() {
     <section id="pricing" className="py-20 lg:py-28 bg-brand-cream">
       <Container>
         <SectionHeading
-          eyebrow="Package pricing"
-          title="Transparent starting points"
-          subtitle="All prices are per person from the published Kitemanja itinerary. Confirm current-season rates before you travel."
+          eyebrow="Skeleton itinerary"
+          title="Package rates"
+          subtitle="Per-person prices from KiteManja, including transfers. Confirm current-season availability before you travel. Contact us to book."
         />
 
         <div className="mt-2 space-y-3">
-          {pricingSections.map(section => (
-            <PricingSectionAccordion key={section.id} section={section} />
+          {pricingSections.map((section, i) => (
+            <PricingSectionAccordion key={section.id} section={section} defaultOpen={i === 0} />
           ))}
         </div>
       </Container>

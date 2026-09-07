@@ -4,11 +4,14 @@ export interface NavItem {
 }
 
 export const navItems: NavItem[] = [
-  { label: 'Our story', href: '#about' },
+  { label: 'Home', href: '#home' },
+  { label: 'Stay', href: '#stay' },
   { label: 'Experiences', href: '#experiences' },
   { label: 'Packages', href: '#packages' },
+  { label: 'Hornbill', href: '#hornbill' },
   { label: 'Gallery', href: '#gallery' },
-  { label: 'Stories', href: '#stories' },
+  { label: 'Pricing', href: '#pricing' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 export { BOOKING_URL } from './site'

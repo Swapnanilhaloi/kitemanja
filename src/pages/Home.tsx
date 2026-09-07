@@ -7,7 +7,6 @@ import { FacilitiesSection } from '@/components/FacilitiesSection'
 import { PackagesSection } from '@/components/PackagesSection'
 import { PricingSection } from '@/components/PricingSection'
 import { Gallery } from '@/components/Gallery'
-import { StoriesSection } from '@/components/StoriesSection'
 import { LocationSection } from '@/components/LocationSection'
 import { ContactSection } from '@/components/ContactSection'
 
@@ -23,7 +22,6 @@ export function Home() {
       <PackagesSection />
       <PricingSection />
       <Gallery />
-      <StoriesSection />
       <LocationSection />
       <ContactSection />
     </main>

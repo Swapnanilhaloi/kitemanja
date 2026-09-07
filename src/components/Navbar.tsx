@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ArrowRight } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useScrolled } from '@/hooks/useScroll'
 import { navItems } from '@/data/navigation'
-import { EMAIL } from '@/data/site'
-import { Logo } from '@/components/Logo'
 import { cn } from '@/lib/utils'
 
 export function Navbar() {
   const scrolled = useScrolled(24)
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
+  const overlay = !scrolled && !menuOpen
 
   useEffect(() => {
     const handler = () => { if (window.innerWidth >= 1024) setMenuOpen(false) }
@@ -24,7 +23,7 @@ export function Navbar() {
   }, [menuOpen])
 
   useEffect(() => {
-    const ids = ['home', ...navItems.map(n => n.href.slice(1)), 'contact']
+    const ids = navItems.map(n => n.href.slice(1))
     const observers = ids.map(id => {
       const el = document.getElementById(id)
       if (!el) return null
@@ -50,36 +49,44 @@ export function Navbar() {
       <header
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-          scrolled || menuOpen
-            ? 'bg-brand-cream/90 backdrop-blur-md border-b border-brand-border/80 py-2.5'
-            : 'bg-brand-cream/80 backdrop-blur-sm py-3.5'
+          overlay
+            ? 'bg-transparent py-4'
+            : 'bg-brand-cream/90 backdrop-blur-md border-b border-brand-border/80 py-2.5'
         )}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 sm:px-8 lg:px-12">
           <a
             href="#home"
             onClick={e => { e.preventDefault(); handleNav('#home') }}
-            className="flex items-center gap-2.5 focus-visible:outline-none"
+            className="flex flex-col leading-none focus-visible:outline-none"
             aria-label="Kitemanja home"
           >
-            <Logo />
-            <span className="hidden sm:flex flex-col leading-none">
-              <span className="font-display text-[13px] font-bold tracking-[0.18em] text-brand-ink">
-                KITEMANJA
-              </span>
+            <span className="font-display text-[15px] font-extrabold tracking-[0.12em] sm:text-base">
+              <span className="text-[#5aa8dc]">KITE</span>
+              <span className="text-brand-secondary">MANJA</span>
+            </span>
+            <span
+              className={cn(
+                'mt-1 text-[8px] font-semibold uppercase tracking-[0.22em]',
+                overlay ? 'text-white/90' : 'text-brand-ink/70'
+              )}
+            >
+              Hornbill Festival
             </span>
           </a>
 
-          <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">
             {navItems.map(item => (
               <button
                 key={item.href}
                 onClick={() => handleNav(item.href)}
                 className={cn(
-                  'px-3.5 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] rounded-full transition-colors cursor-pointer',
+                  'px-3 py-2 text-[13px] font-medium tracking-wide rounded-full transition-colors cursor-pointer',
                   activeSection === item.href.slice(1)
-                    ? 'text-brand-primary'
-                    : 'text-brand-ink/70 hover:text-brand-ink'
+                    ? 'text-[#6bb8e8]'
+                    : overlay
+                      ? 'text-white hover:text-white/80'
+                      : 'text-brand-ink/70 hover:text-brand-ink'
                 )}
               >
                 {item.label}
@@ -87,33 +94,32 @@ export function Navbar() {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-4">
-            <a
-              href={`mailto:${EMAIL}`}
-              className="text-[12px] text-brand-muted hover:text-brand-primary transition-colors"
-            >
-              {EMAIL}
-            </a>
+          <div className="hidden lg:flex items-center">
             <button
               onClick={() => handleNav('#contact')}
-              className="inline-flex items-center gap-2 rounded-full bg-brand-primary px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-white hover:bg-[#0b67a8] transition-colors cursor-pointer"
+              className="inline-flex items-center rounded-full bg-brand-secondary px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#7ab536] transition-colors cursor-pointer"
             >
-              Plan your escape
+              Book Now
             </button>
           </div>
 
           <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={() => handleNav('#contact')}
-              className="rounded-full bg-brand-primary px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-white"
+              className="rounded-full bg-brand-secondary px-4 py-2 text-xs font-semibold text-white"
             >
-              Plan
+              Book Now
             </button>
             <button
               onClick={() => setMenuOpen(v => !v)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-brand-primary shadow-sm border border-brand-border"
+              className={cn(
+                'flex h-10 w-10 items-center justify-center rounded-full',
+                overlay
+                  ? 'bg-white/15 text-white border border-white/25'
+                  : 'bg-white text-brand-primary shadow-sm border border-brand-border'
+              )}
             >
               {menuOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
@@ -142,9 +148,9 @@ export function Navbar() {
               ))}
               <button
                 onClick={() => handleNav('#contact')}
-                className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-brand-primary px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-white"
+                className="mt-3 inline-flex items-center justify-center rounded-full bg-brand-secondary px-5 py-3 text-sm font-semibold text-white"
               >
-                Plan your escape <ArrowRight size={14} />
+                Book Now
               </button>
             </div>
           </motion.nav>

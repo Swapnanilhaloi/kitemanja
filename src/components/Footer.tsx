@@ -1,6 +1,6 @@
 import { Container } from '@/components/ui/Container'
 import { navItems } from '@/data/navigation'
-import { EMAIL, WHATSAPP, WHATSAPP_URL, BOOKING_URL } from '@/data/site'
+import { EMAIL, WHATSAPP, WHATSAPP_URL, BOOKING_URL, CAMP_OPENS } from '@/data/site'
 import { Logo } from '@/components/Logo'
 
 const currentYear = new Date().getFullYear()
@@ -22,19 +22,22 @@ export function Footer() {
               aria-label="Kitemanja home"
             >
               <Logo />
-              <span className="font-display text-sm font-bold tracking-[0.18em]">KITEMANJA</span>
+              <span className="leading-tight">
+                <span className="block font-display text-sm font-bold tracking-[0.14em]">
+                  <span className="text-[#6bb8e8]">KITE</span>
+                  <span className="text-brand-secondary">MANJA</span>
+                </span>
+                <span className="text-[10px] uppercase tracking-[0.18em] text-white/50">Hornbill Festival</span>
+              </span>
             </a>
             <p className="mt-5 text-sm text-white/60 leading-relaxed">
-              Responsible travel, warm camps, and better stories from Northeast India.
-            </p>
-            <p className="mt-4 text-sm text-white/50">
-              Instagram · WhatsApp · {EMAIL}
+              Tenth edition of our exclusive campsite inside Kisama Heritage Village. Operational from {CAMP_OPENS} so you can attend the inaugural ceremony.
             </p>
           </div>
 
           <div className="flex flex-wrap gap-x-10 gap-y-6">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/40 mb-4">Explore</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/40 mb-4">Links</p>
               <ul className="space-y-2">
                 {navItems.map(item => (
                   <li key={item.href}>
@@ -46,7 +49,7 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/40 mb-4">Say hello</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/40 mb-4">Contact us</p>
               <ul className="space-y-2 text-sm text-white/60">
                 <li><a href={`mailto:${EMAIL}`} className="hover:text-white">{EMAIL}</a></li>
                 <li><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white">{WHATSAPP}</a></li>
@@ -57,7 +60,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 text-xs text-white/40">
-          © {currentYear} KiteManja Travel LLP · Made for the curious
+          © {currentYear} Camp Kite Manja · Hornbill Festival, Kohima
         </div>
       </Container>
     </footer>
