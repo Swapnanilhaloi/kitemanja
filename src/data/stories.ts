@@ -1,3 +1,5 @@
+import { FESTIVAL_NAME, FESTIVAL_REGION } from './site'
+
 export interface Story {
   id: string
   quote: string
@@ -9,9 +11,9 @@ export const stories: Story[] = [
   {
     id: 'ananya',
     quote:
-      'Kitemanja made Hornbill feel like staying with family. The tent was cosy, the food was generous, and every evening ended around a fire.',
+      `Kitemanja made ${FESTIVAL_NAME} feel like staying with family. The tent was cosy, the food was generous, and every evening ended around a fire.`,
     name: 'Ananya Sharma',
-    place: 'Mumbai · Hornbill Festival',
+    place: `Mumbai · ${FESTIVAL_NAME}`,
   },
   {
     id: 'david-sarah',
@@ -25,6 +27,6 @@ export const stories: Story[] = [
     quote:
       'We came for the festival and stayed for the people. Sleeping under that sky after a long trail is a memory we will keep for years.',
     name: 'Rohan Deshmukh',
-    place: 'Bengaluru · Kisama Camp',
+    place: `Bengaluru · ${FESTIVAL_REGION} Camp`,
   },
 ]

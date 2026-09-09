@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { ChevronDown, MapPin } from 'lucide-react'
-import { HERO_URL, FESTIVAL_DATES, FESTIVAL_PLACE } from '@/data/site'
+import { HERO_URL, FESTIVAL_DATES, FESTIVAL_NAME, FESTIVAL_PLACE } from '@/data/site'
 
 export function Hero() {
   const go = (id: string) => {
@@ -14,7 +14,7 @@ export function Hero() {
         animate={{ scale: 1 }}
         transition={{ duration: 10, ease: 'easeOut' }}
         src={HERO_URL}
-        alt="Camp Kite Manja at the Hornbill Festival, Kisama Heritage Village"
+        alt={`Camp Kite Manja at ${FESTIVAL_NAME} in ${FESTIVAL_PLACE}`}
         className="absolute inset-0 h-full w-full object-cover"
         fetchPriority="high"
       />
@@ -45,7 +45,7 @@ export function Hero() {
           transition={{ delay: 0.2 }}
           className="mt-2 font-serif text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl"
         >
-          Hornbill Festival
+          {FESTIVAL_NAME}
         </motion.h1>
 
         <motion.p
@@ -64,7 +64,7 @@ export function Hero() {
           transition={{ delay: 0.45 }}
           className="mt-5 max-w-xl text-sm text-white/90 sm:text-lg"
         >
-          Camp inside the venue. Live the culture. {FESTIVAL_DATES} in Kohima, Nagaland.
+          Camp inside the venue. Live the culture. {FESTIVAL_DATES} in {FESTIVAL_PLACE}.
         </motion.p>
 
         <motion.p
@@ -74,7 +74,7 @@ export function Hero() {
           className="mt-5 flex items-center gap-2 text-sm text-white/90"
         >
           <MapPin size={16} className="text-[#6bb8e8]" />
-          Exclusive campsite inside Kisama Heritage Village
+          Exclusive campsite in {FESTIVAL_PLACE}
         </motion.p>
 
         <motion.div
@@ -84,7 +84,7 @@ export function Hero() {
           className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:gap-4"
         >
           <button
-            onClick={() => go('hornbill')}
+            onClick={() => go('festival')}
             className="inline-flex items-center justify-center rounded-full bg-brand-primary px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/20 transition-colors hover:bg-brand-accent cursor-pointer"
           >
             Let’s Explore

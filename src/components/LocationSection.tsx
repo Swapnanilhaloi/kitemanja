@@ -1,29 +1,29 @@
 import { MapPin, Navigation } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { MAPS_URL } from '@/data/site'
+import { FESTIVAL_NAME, FESTIVAL_PLACE, FESTIVAL_REGION, FESTIVAL_STATE, MAPS_URL } from '@/data/site'
 
 const destinations = [
   {
-    name: 'Kisama Heritage Village',
+    name: FESTIVAL_REGION,
     distance: 'Festival HQ',
-    description: 'The home of the Hornbill Festival and Kitemanja campsite.',
+    description: `The home of ${FESTIVAL_NAME} and the Kitemanja campsite.`,
     primary: true,
   },
   {
-    name: 'Kohima',
-    distance: '~12 km from Kisama',
-    description: "Nagaland's capital — markets, history, and the iconic War Cemetery.",
+    name: FESTIVAL_STATE,
+    distance: 'Festival region',
+    description: `Explore ${FESTIVAL_PLACE}, local culture, food, and mountain landscapes.`,
   },
   {
-    name: 'Dimapur',
-    distance: '~74 km from Kohima',
-    description: 'Main gateway city with the nearest airport and railway station.',
+    name: 'Arrival point',
+    distance: 'Transfer to the festival',
+    description: 'Coordinated arrival and departure transfers are available for your group.',
   },
   {
-    name: 'Khonoma Village',
-    distance: '~20 km from Kohima',
-    description: "India's first green village — terraced fields, ancient traditions.",
+    name: 'Local villages',
+    distance: 'Day excursion',
+    description: 'Discover terraced landscapes, local traditions, and the communities around the valley.',
   },
   {
     name: 'Kaziranga',
@@ -40,8 +40,8 @@ export function LocationSection() {
           <div>
             <SectionHeading
               eyebrow="The event"
-              title="Kisama Heritage Village, Kohima"
-              subtitle="Our exclusive campsite sits inside the Hornbill Festival venue — about 12 km from Kohima. Packages start from Dimapur."
+              title={FESTIVAL_PLACE}
+              subtitle={`Our exclusive campsite sits inside the ${FESTIVAL_NAME} venue in ${FESTIVAL_PLACE}.`}
             />
             <div className="space-y-3">
               {destinations.map(dest => (
@@ -75,14 +75,14 @@ export function LocationSection() {
           <div className="relative overflow-hidden rounded-[28px] aspect-[4/3] bg-brand-dark">
             <img
               src="https://www.kitemanja.com/assets/images/banner/about.jpg"
-              alt="Hills around Kisama Heritage Village"
+              alt={`Hills around ${FESTIVAL_PLACE}`}
               className="h-full w-full object-cover opacity-80"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <div className="absolute bottom-6 left-6 text-white">
-              <p className="font-display text-xl font-bold">Kisama Heritage Village</p>
-              <p className="text-sm text-white/80">Kohima, Nagaland</p>
+              <p className="font-display text-xl font-bold">{FESTIVAL_REGION}</p>
+              <p className="text-sm text-white/80">{FESTIVAL_STATE}</p>
             </div>
           </div>
         </div>

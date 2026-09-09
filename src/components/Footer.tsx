@@ -1,6 +1,6 @@
 import { Container } from '@/components/ui/Container'
 import { navItems } from '@/data/navigation'
-import { EMAIL, WHATSAPP, WHATSAPP_URL, BOOKING_URL, CAMP_OPENS } from '@/data/site'
+import { EMAIL, WHATSAPP, WHATSAPP_URL, BOOKING_URL, CAMP_DESCRIPTION, FESTIVAL_NAME, FESTIVAL_PLACE } from '@/data/site'
 import { Logo } from '@/components/Logo'
 
 const currentYear = new Date().getFullYear()
@@ -31,7 +31,7 @@ export function Footer() {
               </span>
             </a>
             <p className="mt-5 text-sm text-white/60 leading-relaxed">
-              Tenth edition of our exclusive campsite inside Kisama Heritage Village. Operational from {CAMP_OPENS} so you can attend the inaugural ceremony.
+              {CAMP_DESCRIPTION}
             </p>
           </div>
 
@@ -60,7 +60,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 text-xs text-white/40">
-          © {currentYear} Camp Kite Manja · Hornbill Festival, Kohima
+          © {currentYear} Camp Kite Manja · {FESTIVAL_NAME}, {FESTIVAL_PLACE}
         </div>
       </Container>
     </footer>

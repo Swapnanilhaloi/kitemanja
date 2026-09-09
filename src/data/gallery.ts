@@ -1,3 +1,5 @@
+import { FESTIVAL_NAME, FESTIVAL_PLACE } from './site'
+
 export interface GalleryImage {
   id: string
   src: string
@@ -57,9 +59,9 @@ const localModules = import.meta.glob('../assets/gallery/*.{jpg,jpeg,png,webp,av
 const km = (path: string) => `https://www.kitemanja.com/assets/images/${path}`
 
 const fallbackImages: GalleryImage[] = [
-  { id: 'g1', category: 'Camp', src: km('banner/banner.jpg'), thumb: km('banner/banner.jpg'), alt: 'Camp Kite Manja at Hornbill Festival' },
+  { id: 'g1', category: 'Camp', src: km('banner/banner.jpg'), thumb: km('banner/banner.jpg'), alt: `Camp Kite Manja at ${FESTIVAL_NAME}` },
   { id: 'g2', category: 'Tents', src: km('background/r1.jpg'), thumb: km('background/r1.jpg'), alt: 'Alpine tent at the campsite' },
-  { id: 'g3', category: 'Festival', src: km('banner/about.jpg'), thumb: km('banner/about.jpg'), alt: 'Kisama Heritage Village' },
+  { id: 'g3', category: 'Festival', src: km('banner/about.jpg'), thumb: km('banner/about.jpg'), alt: FESTIVAL_PLACE },
   { id: 'g4', category: 'Tents', src: km('background/r2.jpg'), thumb: km('background/r2.jpg'), alt: 'Dome tent at Camp Kite Manja' },
 ]
 

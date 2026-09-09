@@ -1,3 +1,5 @@
+import { FESTIVAL_REGION } from './site'
+
 export interface PricingRow {
   pax: string
   vehicle: string
@@ -26,7 +28,7 @@ export const pricingSections: PricingSection[] = [
   {
     id: 'camping-3n4d',
     packageName: '3 Nights / 4 Days — Camping',
-    packageDuration: 'Dimapur–Kohima–Dimapur with transfers',
+    packageDuration: `Arrival–${FESTIVAL_REGION}–Departure with transfers`,
     tables: [
       {
         id: 'camping-tent',
@@ -50,11 +52,11 @@ export const pricingSections: PricingSection[] = [
   {
     id: 'guesthouse-hotel-3n4d',
     packageName: '3 Nights / 4 Days — Guesthouse & Hotel',
-    packageDuration: 'Dimapur–Kohima–Dimapur with transfers',
+    packageDuration: `Arrival–${FESTIVAL_REGION}–Departure with transfers`,
     tables: [
       {
         id: 'guesthouse-hotel',
-        title: '3 nights / 4 days (Dimapur–Kohima–Dimapur)',
+        title: `3 nights / 4 days (${FESTIVAL_REGION} stay)`,
         subtitle: 'Per person price',
         col1Header: 'Guesthouse',
         col2Header: 'Hotel',
@@ -79,7 +81,7 @@ export const pricingSections: PricingSection[] = [
   {
     id: 'all-5nights',
     packageName: '5 Nights / 6 Days — All Accommodation',
-    packageDuration: 'Dimapur–Kohima–Kaziranga–Guwahati with transfers',
+    packageDuration: `${FESTIVAL_REGION} + regional adventure with transfers`,
     tables: [
       {
         id: 'all-5n-guesthouse-hotel',
@@ -108,11 +110,11 @@ export const pricingSections: PricingSection[] = [
   {
     id: 'camping-kaziranga-5n',
     packageName: '5 Nights / 6 Days — Camping + Kaziranga',
-    packageDuration: 'Kohima 3 nights camping + Guwahati/Kaziranga 2 nights in hotels',
+    packageDuration: `${FESTIVAL_REGION} 3 nights camping + regional adventure 2 nights in hotels`,
     tables: [
       {
         id: 'camping-kaziranga-tent',
-        title: 'Kohima 3 Nights Camping & Guwahati–Kaziranga 2 Nights Hotels',
+        title: `${FESTIVAL_REGION} 3 Nights Camping & Regional Adventure 2 Nights Hotels`,
         subtitle: 'Per person price',
         col1Header: 'Dome Tent',
         col2Header: 'Alpine Tent',

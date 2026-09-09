@@ -1,3 +1,5 @@
+import { FESTIVAL_DATES, FESTIVAL_NAME, FESTIVAL_PLACE, FESTIVAL_STATE } from './site'
+
 export interface Accommodation {
   id: string
   title: string
@@ -21,7 +23,7 @@ export const accommodations: Accommodation[] = [
     title: 'Dome Tent',
     subtitle: 'Premium Camping',
     description:
-      'Sleep beneath Nagaland\'s night sky in our pre-pitched Dome Tents, set right inside the festival zone. Wake up to the sounds of drums and culture just steps from your door.',
+      `Sleep beneath ${FESTIVAL_STATE}'s night sky in our pre-pitched Dome Tents, set right inside the festival zone. Wake up to the sounds of drums and culture just steps from your door.`,
     capacity: '2 guests',
     features: [
       'Pre-pitched & ready on arrival',
@@ -73,7 +75,7 @@ export const accommodations: Accommodation[] = [
     title: 'Family Run Guest House',
     subtitle: 'Local Hospitality',
     description:
-      'Stay with local Naga families for an authentic, home-away-from-home experience. Our partner guesthouses offer warm hospitality with comfortable rooms in the heart of Kohima.',
+      `Stay with local families for an authentic, home-away-from-home experience. Our partner guesthouses offer warm hospitality with comfortable rooms close to ${FESTIVAL_PLACE}.`,
     capacity: 'Various room types',
     features: [
       'Authentic local hospitality',
@@ -87,14 +89,14 @@ export const accommodations: Accommodation[] = [
     imageAlt: 'Cosy guesthouse room',
     cta: 'Enquire for guesthouse',
     ctaHref: '#contact',
-    availability: 'Open for December 1st, 2nd and 3rd',
+    availability: `Open for ${FESTIVAL_DATES}`,
   },
   {
     id: 'hotel',
     title: 'Hotel',
     subtitle: 'Comfort & Convenience',
     description:
-      'For guests who prefer hotel-standard comfort, our hotel packages provide private rooms, modern amenities, and easy access to the Hornbill Festival grounds.',
+      `For guests who prefer hotel-standard comfort, our hotel packages provide private rooms, modern amenities, and easy access to the ${FESTIVAL_NAME} grounds.`,
     capacity: 'Various room types',
     features: [
       'Hotel-standard rooms',
@@ -107,6 +109,6 @@ export const accommodations: Accommodation[] = [
     imageAlt: 'Hotel room with modern amenities',
     cta: 'Enquire for hotel',
     ctaHref: '#contact',
-    availability: 'Open for December 1st, 2nd, 3rd, 8th, 9th and 10th',
+    availability: `Open for ${FESTIVAL_DATES}`,
   },
 ]

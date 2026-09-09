@@ -62,7 +62,7 @@ export function Navbar() {
             className="flex items-center focus-visible:outline-none"
             aria-label="Kitemanja home"
           >
-            <Logo size={54} />
+            <Logo size={82} />
           </a>
 
           <nav className="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">

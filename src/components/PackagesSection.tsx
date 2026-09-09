@@ -14,7 +14,7 @@ export function PackagesSection() {
         <SectionHeading
           eyebrow="Package tours"
           title="Skeleton itineraries"
-          subtitle="Two routes from the KiteManja site: 3 nights / 4 days in Nagaland, or 5 nights / 6 days continuing to Kaziranga and Guwahati. Contact us for more details."
+          subtitle="Choose a 3-night festival stay or a 5-night experience with extra time for local villages and regional adventures. Contact us for more details."
         />
 
         <div className="flex gap-2 mt-2 flex-wrap">

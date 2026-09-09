@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { motion } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
-import { EMAIL, WHATSAPP, WHATSAPP_URL } from '@/data/site'
+import { EMAIL, FESTIVAL_NAME, FESTIVAL_PLACE, WHATSAPP, WHATSAPP_URL } from '@/data/site'
 
 export function ContactSection() {
   const [sent, setSent] = useState(false)
@@ -33,7 +33,7 @@ export function ContactSection() {
               Book your desired package
             </h2>
             <p className="mt-4 text-brand-muted leading-relaxed">
-              Tell us your dates, group size, and whether you want a Dome tent, Alpine tent, guesthouse or hotel. We will reply with availability for Hornbill at Kisama.
+              Tell us your dates, group size, and whether you want a Dome tent, Alpine tent, guesthouse or hotel. We will reply with availability for {FESTIVAL_NAME} in {FESTIVAL_PLACE}.
             </p>
             <div className="mt-8 space-y-3 text-sm">
               <a href={`mailto:${EMAIL}`} className="block text-brand-ink hover:text-brand-primary">
@@ -89,11 +89,11 @@ export function ContactSection() {
             </label>
             <label className="block">
               <span className="text-xs font-medium text-brand-ink">Festival dates</span>
-              <input name="when" placeholder="e.g. 1–10 December" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary" />
+              <input name="when" placeholder="e.g. 25–28 September" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary" />
             </label>
             <label className="block">
               <span className="text-xs font-medium text-brand-ink">Notes</span>
-              <textarea name="notes" rows={4} placeholder="Vehicle preference, pickup at Dimapur, extra adults or children…" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary resize-y" />
+              <textarea name="notes" rows={4} placeholder="Vehicle preference, arrival details, extra adults or children…" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary resize-y" />
             </label>
 
             <button type="submit" className="w-full rounded-full bg-brand-primary py-3.5 text-sm font-semibold text-white hover:bg-brand-accent transition-colors cursor-pointer">
