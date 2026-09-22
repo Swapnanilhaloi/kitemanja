@@ -50,22 +50,22 @@ export function ContactSection() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-7 rounded-[28px] bg-brand-cream border border-brand-border p-6 sm:p-8 space-y-4"
+            className="lg:col-span-6 lg:col-start-7 rounded-[28px] bg-brand-cream border border-brand-border p-5 sm:p-6 space-y-3"
           >
             <h3 className="font-display text-2xl font-bold text-brand-ink">Send an enquiry</h3>
             <p className="text-sm text-brand-muted">No payment is taken on this form.</p>
 
             <label className="block">
               <span className="text-xs font-medium text-brand-ink">Your name</span>
-              <input required name="name" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary" />
+              <input required name="name" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-2.5 text-sm outline-none focus:border-brand-primary" />
             </label>
             <label className="block">
               <span className="text-xs font-medium text-brand-ink">Email address</span>
-              <input required type="email" name="email" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary" />
+              <input required type="email" name="email" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-2.5 text-sm outline-none focus:border-brand-primary" />
             </label>
             <label className="block">
               <span className="text-xs font-medium text-brand-ink">Stay type</span>
-              <select required name="stay" defaultValue="" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary">
+              <select required name="stay" defaultValue="" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-2.5 text-sm outline-none focus:border-brand-primary">
                 <option value="" disabled>Select</option>
                 <option>Dome Tent</option>
                 <option>Alpine Tent</option>
@@ -77,7 +77,7 @@ export function ContactSection() {
             </label>
             <label className="block">
               <span className="text-xs font-medium text-brand-ink">Number of guests</span>
-              <select required name="group" defaultValue="" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary">
+              <select required name="group" defaultValue="" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-2.5 text-sm outline-none focus:border-brand-primary">
                 <option value="" disabled>Select</option>
                 <option>2 Pax</option>
                 <option>4 Pax</option>
@@ -89,11 +89,11 @@ export function ContactSection() {
             </label>
             <label className="block">
               <span className="text-xs font-medium text-brand-ink">Festival dates</span>
-              <input name="when" placeholder="e.g. 25–28 September" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary" />
+              <input name="when" placeholder="e.g. 25–28 September" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-2.5 text-sm outline-none focus:border-brand-primary" />
             </label>
             <label className="block">
               <span className="text-xs font-medium text-brand-ink">Notes</span>
-              <textarea name="notes" rows={4} placeholder="Vehicle preference, arrival details, extra adults or children…" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none focus:border-brand-primary resize-y" />
+              <textarea name="notes" rows={3} placeholder="Vehicle preference, arrival details, extra adults or children…" className="mt-1.5 w-full rounded-xl border border-brand-border bg-white px-4 py-2.5 text-sm outline-none focus:border-brand-primary resize-y" />
             </label>
 
             <button type="submit" className="w-full rounded-full bg-brand-primary py-3.5 text-sm font-semibold text-white hover:bg-brand-accent transition-colors cursor-pointer">

@@ -23,4 +23,5 @@ export const FESTIVAL_TAGLINE = activeFestival.tagline
 export const FESTIVAL_INTRO = activeFestival.intro
 export const FESTIVAL_STAY_COPY = activeFestival.stayCopy
 export const FESTIVAL_HIGHLIGHTS = activeFestival.highlights
+export const FESTIVAL_FACTS = activeFestival.facts
 export const CAMP_DESCRIPTION = `Our campsite in ${FESTIVAL_PLACE} gives you a comfortable base for the festival. Operational from ${CAMP_OPENS}, so you can arrive early and settle in.`

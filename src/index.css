@@ -30,9 +30,9 @@
   --color-brand-border:    #c8dce9;
 
   /* Typography */
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-body:    "DM Sans", "Inter", system-ui, sans-serif;
-  --font-ui:      "Inter", system-ui, sans-serif;
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-body:    "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-ui:      "Plus Jakarta Sans", system-ui, sans-serif;
 }
 
 * {

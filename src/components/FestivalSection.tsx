@@ -1,6 +1,9 @@
 import { Calendar, MapPin } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
-import { BANNER_URL, CAMP_DESCRIPTION, CAMP_OPENS, FESTIVAL_DATES, FESTIVAL_NAME, FESTIVAL_PLACE } from '@/data/site'
+import { pickGalleryImage } from '@/data/gallery'
+import { CAMP_DESCRIPTION, CAMP_OPENS, FESTIVAL_DATES, FESTIVAL_NAME, FESTIVAL_PLACE } from '@/data/site'
+
+const festivalImage = pickGalleryImage('Stage', 1)
 
 export function FestivalSection() {
   return (
@@ -9,8 +12,8 @@ export function FestivalSection() {
         <div className="rounded-[28px] bg-brand-dark text-white overflow-hidden grid lg:grid-cols-2">
           <div className="relative min-h-[280px] lg:min-h-[420px]">
             <img
-              src={BANNER_URL}
-              alt={`${FESTIVAL_NAME} at ${FESTIVAL_PLACE}`}
+              src={festivalImage.src}
+              alt={`${festivalImage.alt} at ${FESTIVAL_NAME}`}
               className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"
             />

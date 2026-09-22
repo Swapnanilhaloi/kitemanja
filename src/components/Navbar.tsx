@@ -51,8 +51,8 @@ export function Navbar() {
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
           overlay
-            ? 'bg-transparent py-4'
-            : 'bg-brand-cream/90 backdrop-blur-md border-b border-brand-border/80 py-2.5'
+            ? 'bg-transparent py-2.5'
+            : 'bg-brand-cream/90 backdrop-blur-md border-b border-brand-border/80 py-1.5'
         )}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 sm:px-8 lg:px-12">
@@ -62,7 +62,7 @@ export function Navbar() {
             className="flex items-center focus-visible:outline-none"
             aria-label="Kitemanja home"
           >
-            <Logo size={82} />
+            <Logo size={64} />
           </a>
 
           <nav className="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">
@@ -123,7 +123,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="fixed inset-x-0 top-[68px] z-40 bg-brand-cream border-b border-brand-border px-6 py-6 lg:hidden"
+            className="fixed inset-x-0 top-[58px] z-40 bg-brand-cream border-b border-brand-border px-6 py-6 lg:hidden"
             aria-label="Mobile navigation"
           >
             <div className="flex flex-col gap-1">

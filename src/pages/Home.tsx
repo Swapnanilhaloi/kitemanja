@@ -1,29 +1,27 @@
-import { Hero } from '@/components/Hero'
-import { IntroSection } from '@/components/IntroSection'
-import { FestivalSection } from '@/components/FestivalSection'
-import { ExperiencesSection } from '@/components/ExperiencesSection'
-import { AccommodationSection } from '@/components/AccommodationSection'
-import { FacilitiesSection } from '@/components/FacilitiesSection'
-import { PackagesSection } from '@/components/PackagesSection'
-import { PricingSection } from '@/components/PricingSection'
-import { Gallery } from '@/components/Gallery'
-import { LocationSection } from '@/components/LocationSection'
-import { ContactSection } from '@/components/ContactSection'
+import { Camp } from '@/components/trip/Camp'
+import { Enquire } from '@/components/trip/Enquire'
+import { FestivalPick } from '@/components/trip/FestivalPick'
+import { Group } from '@/components/trip/Group'
+import { Hero } from '@/components/trip/Hero'
+import { Kit } from '@/components/trip/Kit'
+import { Night } from '@/components/trip/Night'
+import { Photos } from '@/components/trip/Photos'
+import { Route } from '@/components/trip/Route'
+import { Stays } from '@/components/trip/Stays'
 
 export function Home() {
   return (
     <main>
       <Hero />
-      <IntroSection />
-      <FestivalSection />
-      <ExperiencesSection />
-      <AccommodationSection />
-      <FacilitiesSection />
-      <PackagesSection />
-      <PricingSection />
-      <Gallery />
-      <LocationSection />
-      <ContactSection />
+      <FestivalPick />
+      <Night />
+      <Camp />
+      <Kit />
+      <Stays />
+      <Route />
+      <Group />
+      <Photos />
+      <Enquire />
     </main>
   )
 }

@@ -1,23 +1,17 @@
 import { motion } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
+import { pickGalleryImage } from '@/data/gallery'
 import {
-  ABOUT_IMAGE_URL,
-  CAMP_OPENS,
-  FESTIVAL_DATES,
+  FESTIVAL_FACTS,
   FESTIVAL_HIGHLIGHTS,
   FESTIVAL_INTRO,
   FESTIVAL_NAME,
   FESTIVAL_PLACE,
-  FESTIVAL_REGION,
   FESTIVAL_STAY_COPY,
   FESTIVAL_TAGLINE,
 } from '@/data/site'
 
-const facts = [
-  { value: 'Camp', label: `Kite Manja at ${FESTIVAL_REGION}` },
-  { value: FESTIVAL_DATES, label: `${FESTIVAL_NAME}, ${FESTIVAL_PLACE}` },
-  { value: CAMP_OPENS, label: 'camp opens for the inaugural' },
-]
+const introImage = pickGalleryImage('Stage', 0)
 
 export function IntroSection() {
   return (
@@ -28,17 +22,18 @@ export function IntroSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            className="lg:col-span-6 relative overflow-hidden rounded-[28px] aspect-[4/5] sm:aspect-[16/11] lg:aspect-[4/5]"
+            transition={{ duration: 0.55 }}
+            className="lg:col-span-6 relative overflow-hidden rounded-[28px] aspect-[4/5]"
           >
             <img
-              src={ABOUT_IMAGE_URL}
-              alt={`Hills around ${FESTIVAL_PLACE}`}
+              src={introImage.src}
+              alt={`${introImage.alt} at ${FESTIVAL_NAME}`}
               className="h-full w-full object-cover"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <p className="absolute bottom-6 left-6 right-6 text-white font-display text-xl font-bold">
-              {FESTIVAL_NAME}
+              {FESTIVAL_PLACE}
             </p>
           </motion.div>
 
@@ -60,7 +55,7 @@ export function IntroSection() {
             </p>
 
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-brand-border pt-8">
-              {facts.map(stat => (
+              {FESTIVAL_FACTS.map(stat => (
                 <div key={stat.label}>
                   <p className="font-display text-2xl font-bold text-brand-ink">{stat.value}</p>
                   <p className="mt-1 text-xs text-brand-muted leading-snug">{stat.label}</p>

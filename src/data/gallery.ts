@@ -8,7 +8,10 @@ export interface GalleryImage {
   category: string
 }
 
-const CATEGORY_KEYS = ['camp', 'tents', 'tent', 'festival', 'food', 'village', 'stay'] as const
+const CATEGORY_KEYS = [
+  'camp', 'tents', 'tent', 'festival', 'food', 'village', 'stay',
+  'stage', 'artist', 'crowd', 'music',
+] as const
 
 const categoryLabel: Record<string, string> = {
   camp: 'Camp',
@@ -18,6 +21,10 @@ const categoryLabel: Record<string, string> = {
   food: 'Food',
   village: 'Village',
   stay: 'Stay',
+  stage: 'Stage',
+  artist: 'Artists',
+  crowd: 'Crowd',
+  music: 'Music',
 }
 
 function titleFromSlug(slug: string) {
@@ -31,8 +38,8 @@ function titleFromSlug(slug: string) {
 function parseFile(path: string, src: string): GalleryImage {
   const file = path.split('/').pop() ?? path
   const base = file.replace(/\.[^.]+$/, '')
-  const withoutIndex = base.replace(/^\d+[-_\s]*/, '')
-  const parts = withoutIndex.split(/[-_]/).filter(Boolean)
+  const withoutIndex = base.replace(/^\d+[.\-_\s]*/, '')
+  const parts = withoutIndex.split(/[.\-_\s]+/).filter(Boolean)
   const key = parts[0]?.toLowerCase() ?? ''
   const category = key && CATEGORY_KEYS.includes(key as (typeof CATEGORY_KEYS)[number])
     ? categoryLabel[key]
@@ -71,6 +78,14 @@ const localImages = Object.entries(localModules)
 
 export const usingLocalGallery = localImages.length > 0
 export const galleryImages: GalleryImage[] = usingLocalGallery ? localImages : fallbackImages
+
+/** Photo for a page section: first match on category, else position in the
+ *  full set, so two sections don't land on the same image. */
+export function pickGalleryImage(category: string, offset = 0): GalleryImage {
+  const pool = galleryImages.filter(img => img.category === category)
+  const source = pool.length > 0 ? pool : galleryImages
+  return source[offset % source.length]
+}
 
 export const galleryCategories = [
   'All',
